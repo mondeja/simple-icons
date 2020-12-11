@@ -1,6 +1,6 @@
 <p align="center" style="margin-bottom:-30px;">
 <a href="https://simpleicons.org/">
-<img src="https://raw.githubusercontent.com/mondeja/simple-icons/readme-logo-dark-mode/images/logo-white-circle-bg.svg" alt="Simple Icons" height=72>
+<img src="https://raw.githubusercontent.com/mondeja/simple-icons/readme-logo-dark-mode/images/logo-white-circle-bg.svg" alt="Simple Icons" height=75>
 </a>
 <h3 align="center">Simple Icons</h3>
 <p align="center">
