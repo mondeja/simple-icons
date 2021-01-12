@@ -7,11 +7,11 @@
 Over 1500 Free SVG icons for popular brands. See them all on one page at <a href="https://simpleicons.org">SimpleIcons.org</a>. Contributions, corrections & requests can be made on GitHub. Started by <a href="https://twitter.com/bathtype">Dan Leech</a>.</p>
 </p>
 
+## Usage
+
 [![Build status](https://img.shields.io/github/workflow/status/simple-icons/simple-icons/Verify/develop?logo=github)](https://github.com/simple-icons/simple-icons/actions?query=workflow%3AVerify+branch%3Adevelop)
 [![npm version](https://img.shields.io/npm/v/simple-icons.svg?logo=npm)](https://www.npmjs.com/package/simple-icons)
 [![Packagist version](https://img.shields.io/packagist/v/simple-icons/simple-icons?logo=packagist&logoColor=white)](https://packagist.org/packages/simple-icons/simple-icons)
-
-## Usage
 
 ### General Usage
 
