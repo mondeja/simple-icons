@@ -9,7 +9,7 @@ Over 1500 Free SVG icons for popular brands. See them all on one page at <a href
 
 <p align="center">
 <a href="https://github.com/simple-icons/simple-icons/actions?query=workflow%3AVerify+branch%3Adevelop"><img src="https://img.shields.io/github/workflow/status/simple-icons/simple-icons/Verify/develop?logo=github" alt="Build status" /></a>
-<a href="https://www.npmjs.com/package/simple-icons"><img src="https://img.shields.io/npm/v/simple-icons.svg?logo=npm" alt="NPM version" /></a>
+<a href="https://www.npmjs.com/package/simple-icons"><img src="https://img.shields.io/static/v1?label=npm&message=X.Y.Z&color=blue&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+TlBNIGljb248L3RpdGxlPjxwYXRoIGQ9Ik0wIDcuMzM0djhoNi42NjZ2MS4zMzJIMTJ2LTEuMzMyaDEydi04SDB6bTYuNjY2IDYuNjY0SDUuMzM0di00SDMuOTk5djRIMS4zMzVWOC42NjdoNS4zMzF2NS4zMzF6bTQgMHYxLjMzNkg4LjAwMVY4LjY2N2g1LjMzNHY1LjMzMmgtMi42Njl2LS4wMDF6bTEyLjAwMSAwaC0xLjMzdi00aC0xLjMzNnY0aC0xLjMzNXYtNGgtMS4zM3Y0aC0yLjY3MVY4LjY2N2g4LjAwMnY1LjMzMXpNMTAuNjY1IDEwSDEydjIuNjY3aC0xLjMzNVYxMHoiLz48L3N2Zz4K" alt="NPM version" /></a>
 <a href="https://packagist.org/packages/simple-icons/simple-icons"><img src="https://img.shields.io/packagist/v/simple-icons/simple-icons?logo=packagist&logoColor=white" alt="Build status" /></a>
 </p>
 
