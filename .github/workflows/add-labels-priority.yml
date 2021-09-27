@@ -2,6 +2,7 @@ name: Add Pull Request Labels and Assign to Project
 on:
   pull_request_target:
     types: [opened]
+  workflow_dispath:
 
 jobs:
   triage:
@@ -18,16 +19,22 @@ jobs:
     env:
       MY_GITHUB_TOKEN: ${{ secrets.AUTO_ASSIGN_WORKFLOW_TOKEN }}
     steps:
+    - id: get-labels
+      name: Get labels
+      run: |
+        pull_number="$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"
+        labels="$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/simple-icons/simple-icons/pulls/$pull_number | jq '.labels[].name' | tr '\n' ',' | sed 's/"//g' | sed 's/,$//')"
+        echo "::set-output name=labels::$labels"
     - name: Assign pull requests to "Unprioritised"
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: contains(github.event.pull_request.labels.*.name, 'icon outdated') == false
+      if: contains(steps.get-labels.outputs.labels, 'icon outdated') == false
       with:
         project: https://github.com/orgs/simple-icons/projects/2
         column_name: Unprioritised
 
     - name: Assign `icon outdated` pull requests to "Priority 1"
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: contains(github.event.pull_request.labels.*.name, 'icon outdated')
+      if: contains(steps.get-labels.outputs.labels, 'icon outdated')
       with:
         project: https://github.com/orgs/simple-icons/projects/2
         column_name: Priority 1
