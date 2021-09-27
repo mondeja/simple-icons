@@ -22,7 +22,7 @@ jobs:
     - id: get-labels
       name: Get labels
       run: |
-        labels="$(curl https://api.github.com/repos/simple-icons/simple-icons/pulls/${{ github.event.pull_request.number }} | jq '.labels[].name' | tr '\n' ',' | sed 's/"//g' | sed 's/,$//')"
+        labels="$(curl https://api.github.com/repos/simple-icons/simple-icons/pulls/${{ github.event.pull_request.number }})"
         echo "::set-output name=labels::$labels"
     - name: Assign pull requests to "Unprioritised"
       uses: srggrs/assign-one-project-github-action@1.2.1
