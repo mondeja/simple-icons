@@ -75,3 +75,4 @@ jobs:
       run: |
         echo "Priority 1: ${{ steps.priority-1.conclusion }}"
         echo "Priority 2: ${{ steps.priority-2.conclusion }}"
+      if: success()
