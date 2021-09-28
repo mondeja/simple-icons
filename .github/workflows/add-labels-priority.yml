@@ -36,12 +36,6 @@ jobs:
       name: Get linked issue numbers
       uses: mondeja/pr-linked-issues-action@v1
 
-    - name: Debug
-      run: |
-        echo "LABELS: ${{ steps.get-labels.outputs.labels }}"
-        echo "MEMBERS: ${{ steps.get-si-members.outputs.members }}"
-        echo "LINKED ISSUES: ${{ steps.get-linked-issues.outputs.issues }}"
-
     - id: priority-1
       name: Assign `icon outdated` pull requests to "Priority 1"
       uses: srggrs/assign-one-project-github-action@1.2.1
@@ -57,7 +51,7 @@ jobs:
       if: |
         contains(steps.get-labels.outputs.labels, 'new icon') &&
         join(steps.get-linked-issues.outputs.issues) != '' &&
-        contains(steps.get-si-members.outputs.members, github.event.actor.login) == true
+        contains(steps.get-si-members.outputs.members, github.event.actor.login) == false
       with:
         project: https://github.com/orgs/simple-icons/projects/2
         column_name: Priority 2
@@ -70,9 +64,3 @@ jobs:
       with:
         project: https://github.com/orgs/simple-icons/projects/2
         column_name: Unprioritised
-
-    - name: Debug 2
-      run: |
-        echo "Priority 1: ${{ steps.priority-1.conclusion }}"
-        echo "Priority 2: ${{ steps.priority-2.conclusion }}"
-      if: success()
