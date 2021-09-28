@@ -23,7 +23,7 @@ jobs:
     - id: get-labels
       name: Get labels
       run: |
-        labels="$(curl --retry 5 -s https://api.github.com/repos/simple-icons/simple-icons/pulls/${{ github.event.pull_request.number }} | jq '.labels[].name' | tr '\n' ',' | sed -e 's/"//g' -e 's/,$//')"
+        labels="$(curl --retry 5 -s https://api.github.com/repos/mondeja/simple-icons/pulls/${{ github.event.pull_request.number }} | jq '.labels[].name' | tr '\n' ',' | sed -e 's/"//g' -e 's/,$//')"
         echo "::set-output name=labels::$labels"
 
     - id: get-si-members
