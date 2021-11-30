@@ -64,7 +64,7 @@
     "test": "node --experimental-specifier-resolution=node node_modules/uvu/bin.js",
     "pretest": "npm run prepublishOnly",
     "posttest": "npm run postpublish",
-    "svgo": "svgo --config svgo.config.js",
+    "svgo": "svgo",
     "get-filename": "node scripts/get-filename.js"
   },
   "engines": {
