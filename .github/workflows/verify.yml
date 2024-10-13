@@ -1,6 +1,7 @@
 name: Verify Source
 on:
   pull_request:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -56,6 +57,21 @@ jobs:
         env:
           # Authorise GitHub API requests for editorconfig-checker
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Debug
+        run: |
+          echo 'Changed docs files: ${{ steps.changes.outputs.docs_files }}'
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: Install lychee
+        run: cargo install lychee
+      - name: Run lychee
+        run: |
+          lychee --version
+          lychee --exclude ^https://www.similarweb.com -- \
+            ${{ steps.changes.outputs.docs_files }}
       - name: Check documentation links
         if: steps.changes.outputs.docs == 'true'
         uses: lycheeverse/lychee-action@v2
