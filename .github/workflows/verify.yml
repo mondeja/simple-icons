@@ -85,6 +85,7 @@ jobs:
           jobSummary: true
           format: markdown
           token: ${{ secrets.GITHUB_TOKEN }}
+          debug: true
       - name: Verify file permissions
         run: |
           CHECK_DIRS="icons/ _data/"
