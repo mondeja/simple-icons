@@ -66,12 +66,15 @@ jobs:
           toolchain: stable
           override: true
       - name: Install lychee
-        run: cargo install lychee
+        run: |
+          curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+          cargo binstall -y lychee
       - name: Run lychee
         run: |
           lychee --version
           lychee --exclude ^https://www.similarweb.com -- \
             ${{ steps.changes.outputs.docs_files }}
+        continue-on-error: true
       - name: Check documentation links
         if: steps.changes.outputs.docs == 'true'
         uses: lycheeverse/lychee-action@v2
